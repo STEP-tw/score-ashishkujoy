@@ -1,16 +1,11 @@
-const ScoreBoard = function(basePoint,incFactor,incPeriod) {
+const ScoreBoard = function(incFactor) {
   this.noOfFoodEaten = 0;
   this.score=0;
-  this.incPeriod=incPeriod;
-  this.incFactor = incFactor;
-  this.incBy = basePoint;
+  this.incBy = incFactor;
 }
 
 ScoreBoard.prototype.incrementScore = function() {
   this.noOfFoodEaten++;
-  if(this.noOfFoodEaten%this.incPeriod==0){
-    this.incBy = this.incBy*this.incFactor;
-  }
   this.score+=this.incBy;
 }
 

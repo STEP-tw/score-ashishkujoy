@@ -64,7 +64,7 @@ const createGame=function() {
 }
 
 const startGame=function() {
-  scoreBoard = new ScoreBoard(10,100,10);
+  scoreBoard = new ScoreBoard(10);
   createGame();
   game.addScoreBoard(scoreBoard);
   createSnake();

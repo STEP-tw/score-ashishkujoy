@@ -64,11 +64,10 @@ const createGame=function() {
 }
 
 const startGame=function() {
-  let scoreBoard = new ScoreBoard(10,100,10);
+  scoreBoard = new ScoreBoard(10,100,10);
   createGame();
   game.addScoreBoard(scoreBoard);
   createSnake();
-  scoreBoard = new ScoreBoard(10,10);
   drawGrids(numberOfRows,numberOfCols);
   drawSnake(game.getSnake());
   game.createFood();

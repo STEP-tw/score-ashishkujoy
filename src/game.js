@@ -24,7 +24,6 @@ Game.prototype.turnRight=function() {
 
 Game.prototype.grow=function() {
   let growthFactor=this.food.getGrowthFactor();
-  this.scoreBoard.incrementScore();
   console.log(growthFactor);
   return this.snake.grow(growthFactor);
 }
@@ -61,6 +60,10 @@ Game.prototype.createFood=function() {
 
 Game.prototype.addScoreBoard = function(scoreBoard) {
   this.scoreBoard = scoreBoard;
+}
+
+Game.prototype.incrementScore = function() {
+  this.scoreBoard.incrementScore();
 }
 
 Game.prototype.getCurrentScore = function() {

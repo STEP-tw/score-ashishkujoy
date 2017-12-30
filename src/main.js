@@ -12,6 +12,7 @@ const animateSnake=function() {
   unpaintSnake(details.oldTail);
   paintHead(details.head);
   if(game.hasSnakeEatenFood()) {
+    game.incrementScore();
     game.grow();
     let newScore = game.getCurrentScore();
     changeScoreView(newScore);

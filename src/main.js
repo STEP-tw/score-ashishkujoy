@@ -19,6 +19,9 @@ const animateSnake=function() {
     game.createFood();
     drawFood(game.getFood());
   }
+  if(game.isSnakeDied()){
+    clearInterval(animator);
+  }
 }
 
 const changeSnakeDirection=function(event) {

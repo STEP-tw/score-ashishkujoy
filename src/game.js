@@ -69,3 +69,7 @@ Game.prototype.incrementScore = function() {
 Game.prototype.getCurrentScore = function() {
   return this.scoreBoard.getCurrentScore();
 }
+
+Game.prototype.isSnakeDied = function() {
+  return this.snake.isEatingItself();
+}

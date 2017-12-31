@@ -6,18 +6,22 @@ let scoreBoard = undefined;
 
 let animator=undefined;
 
+const growSnakeAndCreateNewFood = function(game) {
+  game.incrementScore();
+  game.grow();
+  let newScore = game.getCurrentScore();
+  changeScoreView(newScore);
+  game.createFood();
+  drawFood(game.getFood());
+}
+
 const animateSnake=function() {
   let details=game.move();
   paintBody(details.oldHead);
   unpaintSnake(details.oldTail);
   paintHead(details.head);
   if(game.hasSnakeEatenFood()) {
-    game.incrementScore();
-    game.grow();
-    let newScore = game.getCurrentScore();
-    changeScoreView(newScore);
-    game.createFood();
-    drawFood(game.getFood());
+    growSnakeAndCreateNewFood(game);
   }
   if(game.isSnakeDied()){
     clearInterval(animator);
@@ -69,6 +73,11 @@ const createGame=function() {
 const startGame=function() {
   scoreBoard = new ScoreBoard(10);
   createGame();
+  let wallRange = {
+    x: numberOfCols,
+    y: numberOfRows
+  }
+  game.addWallRange(wallRange);
   game.addScoreBoard(scoreBoard);
   createSnake();
   drawGrids(numberOfRows,numberOfCols);

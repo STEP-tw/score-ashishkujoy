@@ -25,5 +25,14 @@ Snake.prototype={
   },
   turnRight:function() {
     this.head=this.head.turnRight();
+  },
+  isEatingItself:function() {
+    let head = this.head;
+    return this.body.some((bodyPart)=>{
+      return head.isSameCoordAs(bodyPart);
+    });
+  },
+  isInRangeOf:function(range) {
+    return this.head.isInRangeOf(range);
   }
 }

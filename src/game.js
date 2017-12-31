@@ -71,5 +71,13 @@ Game.prototype.getCurrentScore = function() {
 }
 
 Game.prototype.isSnakeDied = function() {
-  return this.snake.isEatingItself();
+  return this.snake.isEatingItself() || this.isSnakeHittedWall();
+}
+
+Game.prototype.addWallRange = function(range) {
+  this.range = range;
+}
+
+Game.prototype.isSnakeHittedWall = function() {
+  return !this.snake.isInRangeOf(this.range);
 }

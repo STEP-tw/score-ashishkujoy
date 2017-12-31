@@ -29,3 +29,14 @@
   background-color: green;
   border-radius: 50%;
 }
+
+#restart_button {
+  background-color: brown;
+  font-size: 30px;
+}
+
+#score_board {
+  font-size: 36px;
+  font-family: fantasy;
+  color: brown;
+}

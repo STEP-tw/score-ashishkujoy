@@ -25,6 +25,8 @@ const animateSnake=function() {
   }
   if(game.isSnakeDied()){
     clearInterval(animator);
+    displayRestartButton();
+    return;
   }
 }
 

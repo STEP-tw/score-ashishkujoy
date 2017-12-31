@@ -47,3 +47,16 @@ const changeScoreView = function(newScore) {
   let score = document.getElementById("current_score");
   score.innerHTML=newScore;
 }
+
+const displayRestartButton = function() {
+  let restartPosition = document.getElementById("restart_position");
+  let restartButton = document.createElement('button');
+  restartButton.id = "restart_button";
+  restartButton.innerHTML = "restart";
+  restartButton.onclick = restart ;
+  restartPosition.appendChild(restartButton);
+}
+
+const restart = function(){
+  location.reload();
+}
